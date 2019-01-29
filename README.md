@@ -1,6 +1,7 @@
 # Musicapplication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+This project must run at the backend for angular to interact with database. 
 
 ## Development server
 
