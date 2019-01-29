@@ -1,0 +1,16 @@
+<p>
+  Wishlist!!
+</p>
+<div *ngFor = "let track of tracks">
+    <div class = "card d-inline">
+  <div class = "card-text">{{ track.trackId }}</div>
+  <div class = "card-text">{{ track.trackName }}</div>
+  <div class = "card-text">{{track.trackComments}}</div>
+  <a routerLink= "/update" routerLinkActive="active" class = "card-footer"><button class = "btn btn-primary">update</button></a>
+<button class = "btn btn-primary" (click) = "deletetrack(track.trackId)">delete</button>
+</div>
+</div>
+<!-- <ul class = "flex-container">
+  <li><a routerLink = "/update" routerLinkActive = "active">update</a></li>
+</ul> -->
+<router-outlet></router-outlet>

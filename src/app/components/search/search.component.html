@@ -1,0 +1,28 @@
+<p>
+  search works!
+</p>
+<!-- <form #createForm="ngForm" (ngSubmit)="search()">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" name="trackname" [(ngModel)]="trackname" placeholder="Track Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+      </div>
+    </div>
+  </form> -->
+<div *ngFor="let music of alltracks.results.trackmatches.track" class = "col-sm-3">
+  <div class = "card" style = "width: 18rem">
+  <img class = "card-img-top" src = '{{music.image[2]["#text"]}}' alt = "musicimage" />
+  <div class = "card-body">
+      <p class = "card-text" >{{ music.mbid }}</p>
+      <p class = "card-text">{{ music.name | uppercase }}</p>
+      <p class = "card-text">{{ music.artist }}</p>
+      <p class = "card-text">Listners: {{ music.listeners }}</p>    
+      <!-- <button (click)=addmusic()></button> -->
+      <button class = "card-footer" [routerLink]="['/add', music.mbid]">
+      save to playlist
+      </button>
+      <!-- <input type="text" class="col-lg-4" name="trackname" [(ngModel)]="trackname" placeholder="Track Name" aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+      </div>
+  </div>
+</div>
+  
