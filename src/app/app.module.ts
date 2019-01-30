@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
@@ -18,7 +17,7 @@ const routes: Routes = [
   {path: 'delete/:id', component: DeleteComponent },
   {path: 'wishlist', component: WishlistComponent },
   {path: 'home', component: HomeComponent },
-  {path: 'update', component: UpdateComponent},
+  {path: 'update/:id/:value', component: UpdateComponent},
   {path: 'search/:value', component: SearchComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: '**', redirectTo: '/home', pathMatch: 'full' }

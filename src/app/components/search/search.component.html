@@ -9,17 +9,16 @@
       </div>
     </div>
   </form> -->
-<div *ngFor="let music of alltracks.results.trackmatches.track" class = "col-sm-3">
+<div *ngFor="let music of alltracks.results.trackmatches.track" class = "col-sm-4">
   <div class = "card" style = "width: 18rem">
-  <img class = "card-img-top" src = '{{music.image[2]["#text"]}}' alt = "musicimage" />
+  <img class = "card-img-top" src = '{{music.image[3]["#text"]}}' alt = "musicimage" />
   <div class = "card-body">
       <p class = "card-text" >{{ music.mbid }}</p>
       <p class = "card-text">{{ music.name | uppercase }}</p>
       <p class = "card-text">{{ music.artist }}</p>
-      <p class = "card-text">Listners: {{ music.listeners }}</p>    
-      <!-- <button (click)=addmusic()></button> -->
-      <button class = "card-footer" [routerLink]="['/add', music.mbid]">
-      save to playlist
+      <p class = "card-text">Listners: {{ music.listeners }}</p>
+      <button class = "card-footer btn btn-outline-success my-2 my-sm-0 btn-info" (click) = "savetrack(music.mbid)">
+      save
       </button>
       <!-- <input type="text" class="col-lg-4" name="trackname" [(ngModel)]="trackname" placeholder="Track Name" aria-label="Recipient's username" aria-describedby="button-addon2"> -->
       </div>

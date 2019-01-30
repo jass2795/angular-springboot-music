@@ -1,13 +1,19 @@
 <p>
   Wishlist!!
 </p>
+<div class ="row">
 <div *ngFor = "let track of tracks">
-    <div class = "card d-inline">
+    <div class = "card d-inline col-sm-4">
+    <img class = "card-img-top" src = '{{track.trackUrl}}' alt = "musicimage" />
+    <div class = "card-body">
   <div class = "card-text">{{ track.trackId }}</div>
   <div class = "card-text">{{ track.trackName }}</div>
-  <div class = "card-text">{{track.trackComments}}</div>
-  <a routerLink= "/update" routerLinkActive="active" class = "card-footer"><button class = "btn btn-primary">update</button></a>
-<button class = "btn btn-primary" (click) = "deletetrack(track.trackId)">delete</button>
+  <div class = "card-text">{{ track.trackComments }}</div>
+  <input #update type = "text" />
+<button class = "btn btn-warning" (click) = "updatetrack(track.trackId,update.value)">update</button>
+<button class = "card-footer btn btn-danger" (click) = "deletetrack(track.trackId)">delete</button>
+</div>
+</div>
 </div>
 </div>
 <!-- <ul class = "flex-container">

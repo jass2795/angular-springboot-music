@@ -14,7 +14,7 @@ export class TrackService {
   }
 
   updateTrack(id: number, value: string): Observable<Object> {
-    return this.http.put(this.baseUrl + id + '/' + value, value);
+    return this.http.put(this.baseUrl + 'track/' + id + '/' + value, value);
   }
 
   deleteTrack(id: number): Observable<any> {

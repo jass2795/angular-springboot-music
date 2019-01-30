@@ -16,7 +16,7 @@ export class AddComponent implements OnInit {
   public url: any;
   public track1 = {
      trackId: this.mbidnew,
-     trackName: this.artist,
+     trackName: this.track,
       trackComments: this.artist,
       trackUrl: this.url
   };
@@ -27,11 +27,12 @@ export class AddComponent implements OnInit {
     console.log(this.mbidnew);
      this.searchService.getTrackInfo(this.mbidnew)
     .subscribe( data => {
+      console.log(data);
        this.track1.trackId = this.mbidnew;
-        this.track1.trackName = data.track.name;
-        this.track1.trackComments = data.track.artist.name;
-        this.track1.trackUrl = data.track.image[3]['#text'];
-
+        this.track1.trackName = data['track']['name'];
+        this.track1.trackComments = data['track']['artist']['name'];
+        // tslint:disable-next-line:quotemark
+        this.track1.trackUrl = data['track'].album.image[3]['#text'];
         this.trackService.addTrack(this.track1).subscribe(data1 => console.log(data1));
     });
   }
